@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        app:title="PDF"
+        app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txtLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Loading PDF…"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:background="?attr/colorSurface">
+
+        <TextView
+            android:id="@+id/txtPageInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:paddingStart="8dp" />
+
+        <Button android:id="@+id/btnSearch" style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+            android:text="@string/search" android:textSize="13sp" />
+        <Button android:id="@+id/btnOutline" style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+            android:text="@string/outline" android:textSize="13sp" />
+        <Button android:id="@+id/btnGoto" style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+            android:text="@string/go_to_page" android:textSize="13sp" />
+        <Button android:id="@+id/btnNight" style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+            android:text="@string/night_mode" android:textSize="13sp" />
+        <Button android:id="@+id/btnEditPages" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+            android:text="@string/edit_pages" android:textSize="13sp" />
+    </LinearLayout>
+</LinearLayout>

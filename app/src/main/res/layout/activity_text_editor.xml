@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface"
+        app:title="Text"
+        app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="?attr/colorSurface">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <Button android:id="@+id/btnFind" style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+                android:text="@string/find_replace" android:textSize="13sp" />
+            <Button android:id="@+id/btnCount" style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+                android:text="@string/word_count" android:textSize="13sp" />
+            <Button android:id="@+id/btnPreview" style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+                android:text="@string/preview" android:textSize="13sp" />
+            <Button android:id="@+id/btnSave" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="14dp"
+                android:text="@string/save" android:textSize="13sp" />
+            <Button android:id="@+id/btnSaveAs" style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_margin="2dp" android:minWidth="0dp" android:paddingHorizontal="12dp"
+                android:text="@string/save_as" android:textSize="13sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/scrollEdit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="top"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:padding="16dp"
+                android:textSize="15sp" />
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/scrollPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txtPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="16sp" />
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>

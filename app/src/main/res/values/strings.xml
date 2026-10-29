@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OmniDoc</string>
+    <string name="tagline">Your private document workspace · 100% offline</string>
+    <string name="open_document">Open document</string>
+    <string name="new_document">New document</string>
+    <string name="recent_files">Recent files</string>
+    <string name="no_recent_files">No recent files yet.\nTap "Open document" to get started.</string>
+
+    <string name="save">Save</string>
+    <string name="save_as">Save as…</string>
+    <string name="find_replace">Find &amp; replace</string>
+    <string name="word_count">Word count</string>
+    <string name="insert_image">Insert image</string>
+    <string name="insert_table">Insert table</string>
+    <string name="align_left">Left</string>
+    <string name="align_center">Centre</string>
+    <string name="align_right">Right</string>
+    <string name="align_justify">Justify</string>
+    <string name="bullet_list">• List</string>
+    <string name="number_list">1. List</string>
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="text_color">Text colour</string>
+    <string name="highlight">Highlight</string>
+
+    <string name="search">Search</string>
+    <string name="outline">Outline</string>
+    <string name="night_mode">Night</string>
+    <string name="edit_pages">Edit pages</string>
+    <string name="go_to_page">Go to page</string>
+
+    <string name="rotate">Rotate</string>
+    <string name="delete_pages">Delete</string>
+    <string name="move_up">Up</string>
+    <string name="move_down">Down</string>
+    <string name="extract_pages">Extract</string>
+    <string name="append_pdf">Append PDF</string>
+    <string name="preview">Preview</string>
+</resources>

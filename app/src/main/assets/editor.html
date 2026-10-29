@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<style>
+  html, body { margin:0; padding:0; }
+  body {
+    padding: 16px;
+    color: #1b1b1f;
+    background: #ffffff;
+    font-family: sans-serif;
+    font-size: 16px;
+    outline: none;
+    -webkit-text-size-adjust: none;
+    word-wrap: break-word;
+  }
+  p { margin: 8px 0; }
+  h1,h2,h3,h4,h5,h6 { margin: 14px 0 8px 0; line-height:1.25; }
+  h1 { font-size: 1.9em; } h2 { font-size: 1.6em; } h3 { font-size: 1.35em; }
+  h4 { font-size: 1.2em; } h5 { font-size: 1.1em; } h6 { font-size: 1.0em; }
+  img { max-width: 100%; height: auto; }
+  table { border-collapse: collapse; margin: 10px 0; }
+  td, th { border: 1px solid #8a8a8a; padding: 6px 10px; min-width: 64px; }
+  ul, ol { padding-left: 30px; }
+  hr { border: none; border-top: 1px solid #bbb; }
+</style>
+</head>
+<body contenteditable="true"><p><br></p>
+<script>
+  function cmd(c, v) {
+    document.execCommand(c, false, v || null);
+  }
+  function setHtml(h) {
+    document.body.innerHTML = (h && h.length > 0) ? h : '<p><br></p>';
+  }
+  function getHtml() {
+    return document.body.innerHTML;
+  }
+  function insertTable() {
+    var t = '<table><tbody>' +
+      '<tr><td>Cell</td><td>Cell</td><td>Cell</td></tr>' +
+      '<tr><td>Cell</td><td>Cell</td><td>Cell</td></tr>' +
+      '<tr><td>Cell</td><td>Cell</td><td>Cell</td></tr>' +
+      '</tbody></table><p><br></p>';
+    cmd('insertHTML', t);
+  }
+  document.addEventListener('selectionchange', function () {
+    try {
+      var s = JSON.stringify({
+        b: document.queryCommandState('bold'),
+        i: document.queryCommandState('italic'),
+        u: document.queryCommandState('underline'),
+        s: document.queryCommandState('strikeThrough')
+      });
+      AndroidNative.state(s);
+    } catch (e) { }
+  });
+  document.addEventListener('input', function () {
+    try { AndroidNative.changed(document.body.innerHTML.length); } catch (e) { }
+  });
+  // Keep CSS-styled output so the docx converter sees colours/sizes as styles
+  cmd('styleWithCSS', true);
+</script>
+</body>
+</html>
